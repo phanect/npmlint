@@ -1,0 +1,50 @@
+[tools]
+node = "24"
+"npm:nushell" = "latest"
+
+[tasks]
+  [tasks.build]
+  run = "tsdown"
+
+  [tasks.lint]
+  run = [
+    "tsc --noEmit",
+    "eslint"
+  ]
+
+  [tasks.fix]
+  run = "eslint --fix"
+
+  [tasks.test]
+  run = "vitest run"
+
+  [tasks.clean]
+  run = "git clean -dX --exclude=\"!.env\" --exclude=\"!mise.local.toml\" --force"
+
+  [tasks.refresh]
+  depends = [ "clean" ]
+  run = [
+    "rm --force ./pnpm-lock.yaml",
+    "corepack enable",
+    "corepack up",
+    "mise install"
+  ]
+
+  [tasks.publish]
+  run = "npm publish"
+
+[hooks]
+postinstall = [
+  "corepack enable",
+  "pnpm install",
+]
+
+[env]
+_.path = "./node_modules/.bin"
+
+[settings]
+jobs = 8
+
+# Required for hooks as of 2025.10
+# https://mise.jdx.dev/hooks.html
+experimental = true
