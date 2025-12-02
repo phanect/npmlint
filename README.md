@@ -25,3 +25,9 @@ cd /path/to/npmlint
 mise install
 mise build
 ```
+
+## License & Credits
+
+Licensed under the [Apache License 2.0](./LICENSE.txt).
+
+Copyright &copy; 2025-present Jumpei Ogawa
