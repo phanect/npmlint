@@ -43,5 +43,8 @@
       "esbuild",
       "unrs-resolver"
     ]
+  },
+  "dependencies": {
+    "glob": "^13.0.0"
   }
 }

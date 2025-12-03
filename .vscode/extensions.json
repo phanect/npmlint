@@ -4,5 +4,6 @@
     "EditorConfig.EditorConfig",
     "hverlin.mise-vscode",
     "tamasfe.even-better-toml"
+    // "TheNuProjectContributors.vscode-nushell-lang"
   ]
 }
